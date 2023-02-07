@@ -25,14 +25,13 @@ function Game() {
 
     if (tentativeGuess.toUpperCase() === answer) {
       setGameStatus("won");
-    } else if (guesses.length >= NUM_OF_GUESSES_ALLOWED) {
+    } else if (guesses.length === NUM_OF_GUESSES_ALLOWED - 1) {
       setGameStatus("lost");
     }
   }
 
   return (
     <>
-      {gameStatus}
       <GuessRender guesses={guesses} answer={answer} />
       <GuessInput
         gameStatus={gameStatus}
